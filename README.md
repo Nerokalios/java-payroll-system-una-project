@@ -20,6 +20,8 @@ The main objective of this project is to practice and apply Java fundamentals, i
 - Basic payroll calculation logic
 - Separation of responsibilities in code
 
+---
+
 ## 👥 Authors
 
 - Wolfan Jose Calzadilla Salcedo

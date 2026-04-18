@@ -22,5 +22,5 @@ The main objective of this project is to practice and apply Java fundamentals, i
 
 ## 👥 Authors
 
-- Wolfan Jose Calzadilla Salced 
+- Wolfan Jose Calzadilla Salcedo
 - Isis Santana Garcia

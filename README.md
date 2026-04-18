@@ -20,18 +20,7 @@ The main objective of this project is to practice and apply Java fundamentals, i
 - Basic payroll calculation logic
 - Separation of responsibilities in code
 
----
+## 👥 Authors
 
-## 🧠 System Overview
-
-The system works in a simple flow:
-
-1. The user inputs employee data
-2. Data is stored in a list of employees
-3. The system processes each employee based on its type
-4. Payroll is calculated
-5. Results are displayed in a structured format
-
----
-
-## 🔄 System Flow Diagram
+- Wolfan Jose Calzadilla Salced 
+- Isis Santana Garcia

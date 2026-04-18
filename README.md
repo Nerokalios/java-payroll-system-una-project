@@ -1,2 +1,37 @@
-# java-payroll-system-una-project
-A practical Java project that simulates a basic payroll system for a fictional company. It calculates employee salaries using simplified rules and serves as an exercise to practice core Java and object-oriented programming principles.
+# University Payroll System (Java)
+
+## 📌 Project Description
+
+This is a university academic project developed in Java.  
+It simulates a basic payroll system for a fictional company, allowing the calculation of employee salaries based on simple rules.
+
+The project focuses on applying fundamental programming and object-oriented programming concepts such as classes, objects, lists, and basic logic implementation.
+
+---
+
+## 🎯 Objective
+
+The main objective of this project is to practice and apply Java fundamentals, including:
+
+- Object-Oriented Programming (OOP)
+- Use of classes and objects
+- Data structures (ArrayList)
+- Input and output handling
+- Basic payroll calculation logic
+- Separation of responsibilities in code
+
+---
+
+## 🧠 System Overview
+
+The system works in a simple flow:
+
+1. The user inputs employee data
+2. Data is stored in a list of employees
+3. The system processes each employee based on its type
+4. Payroll is calculated
+5. Results are displayed in a structured format
+
+---
+
+## 🔄 System Flow Diagram

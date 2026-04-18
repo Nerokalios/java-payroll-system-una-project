@@ -22,6 +22,12 @@ The main objective of this project is to practice and apply Java fundamentals, i
 
 ---
 
+## Class Diagram
+
+![Class Diagram](./docs/class-diagram.png)
+
+---
+
 ## 👥 Authors
 
 - Wolfan Jose Calzadilla Salcedo

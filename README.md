@@ -1,4 +1,4 @@
-# UNA Payroll System A3(Java)
+# UNA Payroll System A3 (Java)
 
 ## 📌 Project Description
 

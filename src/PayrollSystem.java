@@ -78,11 +78,11 @@ public class PayrollSystem {
     }
 
     public static void employee1(){
-        System.out.println("Not implemented yet.");
+        System.out.println("\nNot implemented yet.");
     }
 
     public static void employee2(){
-        System.out.println("Not implemented yet.");
+        System.out.println("\nNot implemented yet.");
     }
 
     public static void employee3(){

@@ -7,21 +7,29 @@ public class TestPrintList {
     public static void main(String[] args) {
 
         ArrayList<String> person1 = new ArrayList<>();  // First person (inner list)
-        person1.add("Wolfan");
-        person1.add("Salcedo");
+        person1.add("Marcos");
+        person1.add("Perez");
         person1.add("Male");
-        person1.add("27");
+        person1.add("30");
         person1.add("Single");
 
         ArrayList<String> person2 = new ArrayList<>();  // Second person (inner list)
-        person2.add("Isis");
-        person2.add("Santana");
+        person2.add("Maria");
+        person2.add("Silva");
         person2.add("Female");
-        person2.add("N/A");
-        person2.add("N/A");
+        person2.add("16");
+        person2.add("single");
+
+        ArrayList<String> person3 = new ArrayList<>();  // third person (inner list)
+        person3.add("Jesus");
+        person3.add("Soarez");
+        person3.add("Male");
+        person3.add("80");
+        person3.add("Widowed");
 
         people.add(person1);    // Add inner lists into the global list
         people.add(person2);
+        people.add(person3);
 
         System.out.println(people); // Print global list
 

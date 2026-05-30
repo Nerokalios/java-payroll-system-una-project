@@ -13,10 +13,16 @@ public class PayrollSystem_2 {
     static void main() {
         printHeader();
         String input;
+        String rodape;
 
         do {
             int total = employeesList.size();
-            String rodape = total > 0 ? " (" + total + " cadastrado(s))" : "";
+
+            if (total > 0) {
+                rodape = " (" + total + " cadastrado(s))";
+            } else {
+                rodape = "";
+            }
 
             System.out.println("\n── Menu ─────────────────────────────────");
             System.out.println(" [1] Cadastrar funcionário padrão");

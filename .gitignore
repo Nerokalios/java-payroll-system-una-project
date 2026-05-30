@@ -4,3 +4,6 @@
 
 # Compiled output
 out/
+
+#EXCEL
+*.xlsx

@@ -10,13 +10,13 @@ public class PayrollSystem_2 {
     // índices do ArrayList de cada funcionário:
     // 0=tipo  1=nome  2=matrícula  3=salárioFixo  4=extra  5=comissão  6=produtividade  7=salárioFinal
 
-    static void main() {
+    static void main(){
         printHeader();
         String input;
-        String rodape;
+        String rodape; 
 
         do {
-            int total = employeesList.size();
+            int total = employeesList.size(); 
 
             if (total > 0) {
                 rodape = " (" + total + " cadastrado(s))";
@@ -86,10 +86,40 @@ public class PayrollSystem_2 {
         System.out.println("\n══════════════════════════════════════════");
     }
 
-    public static void employee1() {
-        System.out.println("\nAinda não implementado.");
-    }
+       
+public static void employee1() {
+    System.out.println("\n── Cadastro: Funcionário Padrão ─────────");
 
+    System.out.print("  Nome      : ");
+    String nome = sc.nextLine();
+
+    System.out.print("  Matrícula : ");
+    String id = sc.nextLine();
+
+    System.out.print("  Extras (R$): ");
+    while (!sc.hasNextDouble()) {
+        System.out.print("  Valor inválido. Extras (R$): ");
+        sc.next();
+    }
+    double extra = sc.nextDouble();
+    sc.nextLine();
+
+    double finalSalary = salarioFixo + extra;
+
+    ArrayList<String> employee = new ArrayList<>();
+    employee.add("Funcionário Padrão");
+    employee.add(nome);
+    employee.add(id);
+    employee.add(Double.toString(salarioFixo));
+    employee.add(Double.toString(extra));
+    employee.add("N/A");
+    employee.add("N/A");
+    employee.add(Double.toString(finalSalary));
+
+    employeesList.add(employee);
+
+    System.out.println("  ✔ Funcionário cadastrado com sucesso!");
+}
     public static void employee2() {
         System.out.println("\n── Cadastro: Funcionário Comissionado ───");
 

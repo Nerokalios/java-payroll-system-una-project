@@ -1,7 +1,7 @@
 import java.util.ArrayList;
 import java.util.Scanner;
 
-public class PayrollSystem_1 {
+public class PayrollSystem_V1 {
 
     static ArrayList<ArrayList<String>> employeesList = new ArrayList<>();
     static double salarioFixo = 2000.00;
@@ -148,7 +148,4 @@ public class PayrollSystem_1 {
         System.out.print("Cadastrado!\n");
     }
 }
-
-///HOLA ISIS KKK
-// HOLA 
 

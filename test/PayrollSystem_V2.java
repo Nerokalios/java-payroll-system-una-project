@@ -1,16 +1,16 @@
 import java.util.ArrayList;
 import java.util.Scanner;
 
-public class PayrollSystem_2 {
+public class PayrollSystem_V2 {
 
     static ArrayList<ArrayList<String>> employeesList = new ArrayList<>();
-    static double salarioFixo = 2000.00;
+    static final double SALARIO_FIXO = 2000.00;
     static Scanner sc = new Scanner(System.in);
 
     // índices do ArrayList de cada funcionário:
     // 0=tipo  1=nome  2=matrícula  3=salárioFixo  4=extra  5=comissão  6=produtividade  7=salárioFinal
 
-    static void main(){
+    public static void main(String[] args){
         printHeader();
         String input;
         String rodape; 
@@ -29,6 +29,7 @@ public class PayrollSystem_2 {
             System.out.println(" [2] Cadastrar funcionário comissionado");
             System.out.println(" [3] Cadastrar funcionário de produção");
             System.out.println(" [4] Imprimir folha de pagamento" + rodape);
+            System.out.println(" [5] Limpar folha de pagamento");
             System.out.println(" [0] Sair");
             System.out.println("─────────────────────────────────────────");
 
@@ -40,11 +41,20 @@ public class PayrollSystem_2 {
                 case "2": employee2(); break;
                 case "3": employee3(); break;
                 case "4": printList(); break;
-                case "0": System.out.println("\nPrograma encerrado."); break;
+                case "5": clearList(); break;
+                case "0":
+                    System.out.println("\nPrograma encerrado.");
+                    sc.close();
+                    break;
                 default:  System.out.println("Opção inválida.");
             }
 
         } while (!input.equals("0"));
+    }
+
+    static  void  clearList(){
+        employeesList.clear();
+        System.out.println("  ✔ cadastros apagados com sucesso!");
     }
 
     static void printHeader() {
@@ -53,7 +63,7 @@ public class PayrollSystem_2 {
         System.out.println("╚══════════════════════════════════════╝");
     }
 
-    public static void printList() {
+    static void printList() {
         if (employeesList.isEmpty()) {
             System.out.println("\nNenhum funcionário cadastrado.");
             return;
@@ -86,41 +96,41 @@ public class PayrollSystem_2 {
         System.out.println("\n══════════════════════════════════════════");
     }
 
-       
-public static void employee1() {
-    System.out.println("\n── Cadastro: Funcionário Padrão ─────────");
+    static void employee1() {
+        System.out.println("\n── Cadastro: Funcionário Padrão ─────────");
 
-    System.out.print("  Nome      : ");
-    String nome = sc.nextLine();
+        System.out.print("  Nome      : ");
+        String nome = sc.nextLine();
 
-    System.out.print("  Matrícula : ");
-    String id = sc.nextLine();
+        System.out.print("  Matrícula : ");
+        String id = sc.nextLine();
 
-    System.out.print("  Extras (R$): ");
-    while (!sc.hasNextDouble()) {
-        System.out.print("  Valor inválido. Extras (R$): ");
-        sc.next();
+        System.out.print("  Extras (R$): ");
+        while (!sc.hasNextDouble()) {
+            System.out.print("  Valor inválido. Extras (R$): ");
+            sc.nextLine();
+        }
+        double extra = sc.nextDouble();
+        sc.nextLine();
+
+        double finalSalary = SALARIO_FIXO + extra;
+
+        ArrayList<String> employee = new ArrayList<>();
+        employee.add("Funcionário Padrão");
+        employee.add(nome);
+        employee.add(id);
+        employee.add(Double.toString(SALARIO_FIXO));
+        employee.add(Double.toString(extra));
+        employee.add("N/A");
+        employee.add("N/A");
+        employee.add(Double.toString(finalSalary));
+
+        employeesList.add(employee);
+
+        System.out.println("  ✔ Funcionário cadastrado com sucesso!");
     }
-    double extra = sc.nextDouble();
-    sc.nextLine();
 
-    double finalSalary = salarioFixo + extra;
-
-    ArrayList<String> employee = new ArrayList<>();
-    employee.add("Funcionário Padrão");
-    employee.add(nome);
-    employee.add(id);
-    employee.add(Double.toString(salarioFixo));
-    employee.add(Double.toString(extra));
-    employee.add("N/A");
-    employee.add("N/A");
-    employee.add(Double.toString(finalSalary));
-
-    employeesList.add(employee);
-
-    System.out.println("  ✔ Funcionário cadastrado com sucesso!");
-}
-    public static void employee2() {
+    static void employee2() {
         System.out.println("\n── Cadastro: Funcionário Comissionado ───");
 
         System.out.print("  Nome      : ");
@@ -132,26 +142,26 @@ public static void employee1() {
         System.out.print("  Vendas (R$): ");
         while (!sc.hasNextDouble()) {
             System.out.print("  Valor inválido. Vendas (R$): ");
-            sc.next();
+            sc.nextLine();
         }
         double sales = sc.nextDouble();
 
         System.out.print("  Comissão (%): ");
         while (!sc.hasNextDouble()) {
             System.out.print("  Valor inválido. Comissão (%): ");
-            sc.next();
+            sc.nextLine();
         }
         double percent = sc.nextDouble();
         sc.nextLine();
 
         double commission = sales * (percent / 100);
-        double finalSalary = salarioFixo + commission;
+        double finalSalary = SALARIO_FIXO + commission;
 
         ArrayList<String> employee = new ArrayList<>();
         employee.add("Funcionário Comissionado");
         employee.add(nome);
         employee.add(id);
-        employee.add(Double.toString(salarioFixo));
+        employee.add(Double.toString(SALARIO_FIXO));
         employee.add("N/A");
         employee.add(Double.toString(commission));
         employee.add("N/A");
@@ -161,7 +171,7 @@ public static void employee1() {
         System.out.println("  ✔ Funcionário cadastrado com sucesso!");
     }
 
-    public static void employee3() {
+    static void employee3() {
         System.out.println("\n── Cadastro: Funcionário de Produção ────");
 
         System.out.print("  Nome      : ");
@@ -173,26 +183,26 @@ public static void employee1() {
         System.out.print("  Peças produzidas: ");
         while (!sc.hasNextInt()) {
             System.out.print("  Valor inválido. Peças produzidas: ");
-            sc.next();
+            sc.nextLine();
         }
         int pieces = sc.nextInt();
 
         System.out.print("  Valor por peça (R$): ");
         while (!sc.hasNextDouble()) {
             System.out.print("  Valor inválido. Valor por peça (R$): ");
-            sc.next();
+            sc.nextLine();
         }
         double pieceValue = sc.nextDouble();
         sc.nextLine();
 
         double bonus = pieceValue * pieces;
-        double finalSalary = salarioFixo + bonus;
+        double finalSalary = SALARIO_FIXO + bonus;
 
         ArrayList<String> employee = new ArrayList<>();
         employee.add("Funcionário Produção");
         employee.add(nome);
         employee.add(id);
-        employee.add(Double.toString(salarioFixo));
+        employee.add(Double.toString(SALARIO_FIXO));
         employee.add("N/A");
         employee.add("N/A");
         employee.add(Double.toString(bonus));

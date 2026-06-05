@@ -24,7 +24,7 @@ The main objective of this project is to practice and apply Java fundamentals, i
 
 ## Class Diagram
 
-![imagen](payroll_report_diagram.png)
+![imagen](payroll_report_diagram_final.png)
 
 ---
 
